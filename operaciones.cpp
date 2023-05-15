@@ -20,5 +20,14 @@ float Resistencia(int volt, int ampere) {
 	return ohm;
 }
 
+float ResistenciaParalelo(list<float> lista) {
+	float resultado, denominador = 0;
 
+	for (list<float>::iterator i = lista.begin(); i != lista.end(); ++ i){
+		float item = *i;
+		denominador = denominador + (1/item);
+	}
+	resultado = 1/denominador;
+	return resultado;
+}
 

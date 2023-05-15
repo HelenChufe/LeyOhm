@@ -7,13 +7,9 @@
 
 int main(){
 	int opc;
-	float resistencia;
-
 
 	opc = Menu();
     menuPrincipal(opc);
-	resistencia = ResistenciaParalelo();
-	printf("%f\n",resistencia);
 	return 0;
 }
 	
