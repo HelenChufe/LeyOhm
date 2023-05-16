@@ -2,49 +2,14 @@
 #include<conio.h>
 #include<list>
 #include<limits>
+#include "operaciones.cpp"
+
 
 using namespace std;
-float Voltaje(float ampere,float ohm ) {
-	float volt;
-    if (ohm <= 0) {
-        printf("Error: Ohm cannot be less than or equal to 0");
-        return 0;
-    }
-    volt=ampere*ohm;
-	return volt;
-}
-float Corriente(float volt, float ohm) {
-	float ampere;
-    if (ohm <= 0) {
-        printf("Error: Ohm cannot be less than or equal to 0");
-        return 0;
-    }
-	ampere=volt/ohm;
-	return ampere;
-}
-float Resistencia(int volt, int ampere) {
-	float ohm;
-    if (ampere == 0) {
-        printf("Error: Ampere cannot be equal to 0");
-        return 0;
-    }
-	ohm=volt/ampere;
-	return ohm;
-}
-float ResistenciaParalelo(list<float> lista) {
-	float resultado, denominador = 0;
-	for (list<float>::iterator i = lista.begin(); i != lista.end(); ++ i){
-		float item = *i;
-        if (item <= 0) {
-            printf("Error: Resistors cannot be less than or equal to 0");
-            return 0;
-        }
-		denominador = denominador + (1/item);
-	}
-	resultado = 1/denominador;
-	return resultado;
-}
+
+
 int main(){
+// opc es la variable designada para almacenar la decision del menu
 		int opc;
 	do{
 		system("cls");
@@ -56,8 +21,10 @@ int main(){
 		printf("5. Salir.\n");
 		printf("Elija una opcion:");
 		scanf("%i",&opc);
-    
+/*Las variables num1, num2, res y resistencia seran utilizadas para la solicitud de datos o
+ayudar al proceso de alguna funcion.*/
 		float num1, num2, res,resistencia;
+/*Con este switch podremos intercalar entre los distintos menus que tiene el programa.*/
 		switch(opc){
 			case 1:
 				system("cls");
@@ -117,7 +84,7 @@ int main(){
 				list<float> lista;
 				float vr;
 				printf("Resistencia en Paralelo.");
-				printf("\n¿Cuantas ramas tiene la resistencia?");scanf("%i",&nr);getch();
+				printf("\n¿Cuantas ramas tiene la resistencia?");scanf("%i",&nr);
 				system("cls");
 				bool wi;
 				for (int i = 1; i <= nr; i++) {
