@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <conio.h>
 
+using namespace std;
 float Voltaje(float ampere,float ohm ) {
 	float volt;
     volt=ampere*ohm;
@@ -30,4 +31,3 @@ float ResistenciaParalelo(list<float> lista) {
 	resultado = 1/denominador;
 	return resultado;
 }
-
